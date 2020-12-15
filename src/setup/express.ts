@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import morgan from 'morgan'
+import passport from '@root/setup/passport'
 import logger from '@root/setup/logger'
 import routes from '@root/routes/index'
 
@@ -22,6 +23,9 @@ app.use(cookieSession({
 
 app.use(bodyParser.json())
 // server.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes)
 
