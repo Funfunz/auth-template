@@ -28,10 +28,8 @@ const funfunz = new Funfunz({
   config,
   // @ts-ignore
   settings: models,
-  // @ts-ignore
-  mutations,
-  // @ts-ignore
-  queries,
+  mutations: mutations as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
+  queries: queries as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
 })
 
 export default funfunz

@@ -29,6 +29,7 @@ export default {
   description: 'Return current user',
   args: {},
   resolve: async (parent, args, { req }) => {
+    log('resolver')
     return req.user
   },
 } as GraphQLFieldConfig<unknown, IContext, IArgs>

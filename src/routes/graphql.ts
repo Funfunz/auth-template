@@ -11,7 +11,7 @@ log('router created')
 
 export default router
 
-// routes
-router.use('/', funfunz.middleware)
+// graphql route
+router.use(funfunz.middleware)
 
 log('end')
