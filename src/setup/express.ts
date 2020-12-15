@@ -2,8 +2,8 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import morgan from 'morgan'
-import logger from 'setup/logger'
-import routes from 'routes/index'
+import logger from '@root/setup/logger'
+import routes from '@root/routes/index'
 
 const log = logger('setup/express')
 log('start')
@@ -20,7 +20,7 @@ app.use(cookieSession({
   secret: SERVER_SESSION_SECRET,
 }))
 
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 // server.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(routes)

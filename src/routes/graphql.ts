@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import logger from '@root/setup/logger'
 
-import graphqlRouter from '@root/routes/graphql'
+import funfunz from '@root/funfunz'
 
 const log = logger('routes')
 log('start')
@@ -11,6 +11,7 @@ log('router created')
 
 export default router
 
-router.use('/graphql', graphqlRouter)
+// routes
+router.use('/', funfunz.middleware)
 
 log('end')

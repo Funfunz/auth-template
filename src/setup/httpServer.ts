@@ -1,6 +1,6 @@
 import http from 'http'
-import logger from 'setup/logger'
-import expressApp from 'setup/express'
+import logger from '@root/setup/logger'
+import expressApp from '@root/setup/express'
 
 const log = logger('setup/http')
 
