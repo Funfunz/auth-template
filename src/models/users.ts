@@ -1,3 +1,5 @@
+import { IHookProps } from "@funfunz/core"
+import { hook_addAndUpdateUser } from "@root/controllers/user"
 export interface IUser {
   id: number
   name: string
@@ -121,6 +123,14 @@ export default {
       }
     },
   ],
+  hooks: {
+    add: {
+      beforeResolver: hook_addAndUpdateUser
+    },
+    update: {
+      beforeResolver: hook_addAndUpdateUser
+    }
+  },
   'layout': {
     'label': 'Users',
     'listPage': {},
