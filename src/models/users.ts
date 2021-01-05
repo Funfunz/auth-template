@@ -1,6 +1,5 @@
 import { hook_addAndUpdateUser, hook_queryUser } from "@root/hooks/user"
 
-console.log({ hook_addAndUpdateUser, hook_queryUser })
 export interface IUser {
   id: number
   name: string
@@ -126,7 +125,7 @@ export default {
   ],
   hooks: {
     query: {
-      beforeResolver: hook_queryUser
+      afterQueryResult: hook_queryUser
     },
     update: {
       beforeResolver: hook_addAndUpdateUser
