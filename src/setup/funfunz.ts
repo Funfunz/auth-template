@@ -25,8 +25,8 @@ const funfunz = new Funfunz({
   config,
   // @ts-ignore
   settings: models,
-  mutations: mutations as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
-  queries: queries as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
+  mutations: mutations as any,
+  queries: queries as any,
 })
 
 export default funfunz

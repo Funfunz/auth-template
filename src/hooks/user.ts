@@ -14,6 +14,7 @@ export function hook_addAndUpdateUser(options: IHookProps<null>) {
 
 export function hook_queryUser(options: IHookProps<null>) {
   log('hook_queryUser')
+  log(options)
   options.results = (options.results as IUser[]).map((item) => {
     return {
       ...item,
