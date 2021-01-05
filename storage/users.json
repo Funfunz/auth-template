@@ -10,5 +10,25 @@
     "email": "name2@domain.com",
     "name": "Name 2",
     "password": "benfica"
+  },
+  {
+    "email": "joaomoura@gmail.com",
+    "name": "joao moura",
+    "password": "password"
+  },
+  {
+    "email": "joaomoura@gmail.com",
+    "name": "joao moura",
+    "password": "password"
+  },
+  {
+    "email": "joaomoura@gmail.com",
+    "name": "joao moura",
+    "password": "password"
+  },
+  {
+    "email": "joaomoura@gmail.com",
+    "name": "joao moura",
+    "password": "password"
   }
 ]

@@ -1,12 +1,13 @@
-import { IHookProps } from '@funfunz/core'
-import { IUser } from '@root/models/users'
+import type { IHookProps } from '@funfunz/core'
+import type { IUser } from '@root/models/users'
 import funfunz from '@root/setup/funfunz'
 import logger from '@root/setup/logger'
 import sha512 from '@root/utils/sha512'
 
 const log = logger('controllers/user')
-
+log('booting users')
 export function hook_addAndUpdateUser(options: IHookProps<null>) {
+  console.log('hello')
   if ((options.args.data as any)?.password) {
     (options.args.data as any).password = sha512((options.args.data as any).password)
   }
