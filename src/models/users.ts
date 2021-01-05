@@ -1,5 +1,4 @@
-import { IHookProps } from "@funfunz/core"
-import { hook_addAndUpdateUser } from "@root/controllers/user"
+import { hook_addAndUpdateUser, hook_queryUser } from "@root/controllers/user"
 export interface IUser {
   id: number
   name: string
@@ -124,10 +123,13 @@ export default {
     },
   ],
   hooks: {
-    add: {
-      beforeResolver: hook_addAndUpdateUser
+    query: {
+      beforeResolver: hook_queryUser
     },
     update: {
+      beforeResolver: hook_addAndUpdateUser
+    },
+    add: {
       beforeResolver: hook_addAndUpdateUser
     }
   },

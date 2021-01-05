@@ -13,6 +13,17 @@ export function hook_addAndUpdateUser(options: IHookProps<null>) {
   return options
 }
 
+export function hook_queryUser(options: IHookProps<null>) {
+  log('hook_queryUser')
+  options.results = (options.results as IUser[]).map((item) => {
+    return {
+      ...item,
+      password: undefined,
+    }
+  })
+  return options
+}
+
 export async function updateById(id: string | number, data: Partial<IUser>) {
   const graphqlData = Object.keys(data).map((key) => {
     return `${key}: "${(data as any)[key]}"`
