@@ -1,28 +1,9 @@
-import { IHookProps } from '@funfunz/core'
 import { IUser } from '@root/models/users'
 import funfunz from '@root/setup/funfunz'
 import logger from '@root/setup/logger'
-import sha512 from '@root/utils/sha512'
 
 const log = logger('controllers/user')
 
-export function hook_addAndUpdateUser(options: IHookProps<null>) {
-  if ((options.args.data as any)?.password) {
-    (options.args.data as any).password = sha512((options.args.data as any).password)
-  }
-  return options
-}
-
-export function hook_queryUser(options: IHookProps<null>) {
-  log('hook_queryUser')
-  options.results = (options.results as IUser[]).map((item) => {
-    return {
-      ...item,
-      password: undefined,
-    }
-  })
-  return options
-}
 
 export async function updateById(id: string | number, data: Partial<IUser>) {
   const graphqlData = Object.keys(data).map((key) => {
