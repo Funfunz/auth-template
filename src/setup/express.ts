@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import morgan from 'morgan'
+import cors from 'cors'
 import passport from '@root/setup/passport'
 import logger from '@root/setup/logger'
 import routes from '@root/routes/index'
@@ -15,6 +16,10 @@ const app = express()
 
 app.use(morgan('dev') as express.Handler)
 
+app.use(cors({
+  origin: ['http://localhost:3001', 'http://localhost:3000'],
+  credentials: true,
+}) as express.Handler)
 // cookies
 app.set('trust proxy', 1)
 app.use(cookieSession({
