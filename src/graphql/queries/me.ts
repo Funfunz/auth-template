@@ -30,7 +30,6 @@ export default {
   args: {},
   resolve: async (parent, args, { req }) => {
     log('resolver')
-    console.log(req.user)
     return req.user
   },
 } as GraphQLFieldConfig<unknown, IContext, IArgs>
