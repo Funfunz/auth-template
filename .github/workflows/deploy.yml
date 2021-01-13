@@ -31,4 +31,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < src/test/test.sql
+      - run: mysql -h $DB_HOST -u $DB_USER -p$DB_PASS $DB_NAME < storage/dump.sql
