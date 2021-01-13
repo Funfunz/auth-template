@@ -4,7 +4,6 @@ import logger from '@root/setup/logger'
 
 const log = logger('controllers/user')
 
-
 export async function updateById(id: string | number, data: Partial<IUser>) {
   const graphqlData = Object.keys(data).map((key) => {
     return `${key}: "${(data as any)[key]}"`

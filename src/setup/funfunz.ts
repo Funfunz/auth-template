@@ -6,7 +6,6 @@ import mutations from '@root/graphql/mutations'
 import queries from '@root/graphql/queries'
 import { GraphQLFieldConfig } from 'graphql'
 
-
 const log = logger('setup/funfunz')
 log('start')
 
