@@ -4,7 +4,6 @@ import logger from '@root/setup/logger'
 import models from '@root/models'
 import mutations from '@root/graphql/mutations'
 import queries from '@root/graphql/queries'
-import { GraphQLFieldConfig } from 'graphql'
 
 const log = logger('setup/funfunz')
 log('start')
@@ -49,8 +48,8 @@ const funfunz = new Funfunz({
   config,
   // @ts-ignore
   settings: models,
-  mutations: mutations as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
-  queries: queries as {[key: string]: GraphQLFieldConfig<unknown, unknown, unknown>},
+  mutations: mutations as any,
+  queries: queries as any,
 })
 
 export default funfunz

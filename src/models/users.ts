@@ -7,8 +7,6 @@ export interface IUser {
   password: string
 }
 
-console.log(hook_queryUser, hook_addAndUpdateUser)
-
 export default {
   name: 'users',
   connector: 'mainDatabase',
@@ -133,7 +131,7 @@ export default {
   ],
   hooks: {
     query: {
-      afterQueryResult: hook_queryUser
+      afterQueryResult: hook_queryUser,
     },
     update: {
       beforeResolver: hook_addAndUpdateUser,

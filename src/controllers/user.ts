@@ -27,6 +27,7 @@ export async function getByEmail(email: string) {
     throw result.errors
   }
   if (result.data && result.data.users && result.data.users.length === 1) {
+    console.log('result', result.data.users)
     return result.data.users[0]
   }
 }
