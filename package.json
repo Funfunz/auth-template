@@ -40,6 +40,7 @@
   "dependencies": {
     "@funfunz/core": "^0.10.2",
     "@funfunz/json-data-connector": "^1.0.0",
+    "@funfunz/sql-data-connector": "^0.6.2",
     "body-parser": "^1.19.0",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
@@ -49,6 +50,7 @@
     "graphql": "^15.4.0",
     "module-alias": "^2.2.2",
     "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
     "nodemailer": "^6.4.17",
     "nunjucks": "^3.2.2",
     "passport": "^0.4.1"

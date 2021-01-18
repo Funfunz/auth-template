@@ -4,11 +4,11 @@ import expressApp from '@root/setup/express'
 
 const log = logger('setup/http')
 
-const { SERVER_PORT = 3001 } = process.env
-expressApp.set('port', Number(SERVER_PORT))
+const { PORT = 3001 } = process.env
+expressApp.set('port', Number(PORT))
 
 const httpServer = http.createServer(expressApp)
-httpServer.listen(Number(SERVER_PORT))
+httpServer.listen(Number(PORT))
 export default httpServer
 log('server created')
 
