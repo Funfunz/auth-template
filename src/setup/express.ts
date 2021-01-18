@@ -17,7 +17,7 @@ const app = express()
 app.use(morgan('dev') as express.Handler)
 
 app.use(cors({
-  origin: ['http://localhost:3001', 'http://localhost:3000'],
+  origin: ['http://localhost:3001', 'http://localhost:3000', 'https://funfunz.github.io'],
   credentials: true,
 }) as express.Handler)
 // cookies
