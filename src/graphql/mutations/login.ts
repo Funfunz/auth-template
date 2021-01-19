@@ -33,6 +33,7 @@ export default {
         if (calculatedHash === user.password) {
           await new Promise((resolve) => {
             console.log('user', user, 'end')
+            
             req.login(user, resolve)
           })
           return true

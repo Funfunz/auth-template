@@ -2,7 +2,7 @@ import Debug from 'debug'
 
 const {
   NAMESPACE = 'backend',
-  DEBUG = 'backend:*',
+  DEBUG = '',
 } = process.env
 
 Debug.enable(DEBUG)

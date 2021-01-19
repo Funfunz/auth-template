@@ -1,25 +1,35 @@
 import dotenv from 'dotenv'
-import logger from '@root/setup/logger'
-
-const log = logger('setup/dotenv')
-log('start')
 
 dotenv.config()
 
-const {
-  DEBUG,
-  NAMESPACE,
-  SERVER_PORT,
-  SERVER_PUBLIC_URL,
-  SERVER_SESSION_SECRET,
-} = process.env
+process.env.PORT = process.env.PORT || '3001'
 
-log({
-  DEBUG,
-  NAMESPACE,
-  SERVER_PORT,
-  SERVER_PUBLIC_URL,
-  SERVER_SESSION_SECRET,
-})
+function logEnv() {
+  const logger = require('@root/setup/logger')
 
-log('end')
+  const log = logger.default('setup/dotenv')
+  log('start')
+
+
+  const {
+    DEBUG,
+    NAMESPACE,
+    SERVER_PORT,
+    SERVER_PUBLIC_URL,
+    SERVER_SESSION_SECRET,
+    PORT
+  } = process.env
+
+  log({
+    DEBUG,
+    NAMESPACE,
+    SERVER_PORT,
+    SERVER_PUBLIC_URL,
+    SERVER_SESSION_SECRET,
+    PORT
+  })
+
+  log('end')
+}
+
+logEnv()

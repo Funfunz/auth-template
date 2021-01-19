@@ -9,6 +9,7 @@ const log = logger('setup/funfunz')
 log('start')
 
 function generateConfig() {
+  log('generating config')
   switch (process.env.FUNFUNZ_CONNECTOR) {
     case 'sql':
       return {
@@ -44,14 +45,16 @@ function generateConfig() {
 const config = generateConfig()
 log(config)
 
-const funfunz = new Funfunz({
-  config,
-  // @ts-ignore
-  settings: models,
-  mutations: mutations as any,
-  queries: queries as any,
-})
-
-export default funfunz
-
+export function generateFunfunz() {
+  log('building funfunz')
+  const funfunz = new Funfunz({
+    config,
+    // @ts-ignore
+    settings: models,
+    mutations: mutations as any,
+    queries: queries as any,
+  })
+  log('built funfunz')
+  return funfunz
+}
 log('end')

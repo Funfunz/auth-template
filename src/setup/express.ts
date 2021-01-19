@@ -5,35 +5,35 @@ import morgan from 'morgan'
 import cors from 'cors'
 import passport from '@root/setup/passport'
 import logger from '@root/setup/logger'
-import routes from '@root/routes/index'
+import { generateRouter } from '@root/routes/index'
+import type { Express } from 'express'
+import { normalizePort } from '@root/utils/normalizePort'
 
 const log = logger('setup/express')
-log('start')
 
-const { SERVER_SESSION_SECRET = 'keyboard cat' } = process.env
+export function generateExpress (): Express {
+  log('start')
+  const { SERVER_SESSION_SECRET = 'keyboard cat' } = process.env
 
-const app = express()
+  const application = express()
+  application.set('port', normalizePort())
+  application.set('trust proxy', 1)
+  
+  application.use([
+    morgan('dev') as express.Handler,
+    cors({
+      origin: process.env.CORS_WHITELIST?.split(' '),
+      credentials: true,
+    }),
+    cookieSession({
+      secret: SERVER_SESSION_SECRET,
+    }),
+    bodyParser.json(),
+    passport.initialize(),
+    passport.session(),
+    generateRouter()
+  ])
 
-app.use(morgan('dev') as express.Handler)
-
-app.use(cors({
-  origin: ['http://localhost:3001', 'http://localhost:3000', 'https://funfunz.github.io'],
-  credentials: true,
-}) as express.Handler)
-// cookies
-app.set('trust proxy', 1)
-app.use(cookieSession({
-  secret: SERVER_SESSION_SECRET,
-}))
-
-app.use(bodyParser.json())
-// server.use(bodyParser.urlencoded({ extended: false }))
-
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(routes)
-
-log('end')
-
-export default app
+  log('end')
+  return application
+}
