@@ -1,5 +1,6 @@
 import http from 'http'
 import logger from '@root/setup/logger'
+import { express } from '@root/index'
 import { normalizePort } from '@root/utils/normalizePort'
 import type { Express } from 'express'
 
@@ -33,10 +34,8 @@ function onListening(httpServer: http.Server) {
   }
 }
 
-export function generateServer(expressApplication: Express) {
-  const expressApp = expressApplication
-  
-  const httpServer = http.createServer(expressApp)
+export function generateServer() {
+  const httpServer = http.createServer(express)
   
   httpServer.on('error', onError)
   httpServer.on('listening', onListening(httpServer))
