@@ -93,6 +93,7 @@ export default {
         },
         label: 'UserId',
         listColumn: {},
+        editField: {}
       }
     }
   ],
