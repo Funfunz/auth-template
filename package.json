@@ -1,6 +1,6 @@
 {
   "name": "funfunz-auth-demo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Authentication demo project using Funfunz",
   "main": "build/index.js",
   "scripts": {

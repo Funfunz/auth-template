@@ -15,6 +15,7 @@ import { generatePassport } from '@root/setup/passport'
 // setup express
 import { generateExpress } from '@root/setup/express'
 
+
 export const passport = generatePassport()
 export const funfunz = generateFunfunz()
 export const express = generateExpress()
