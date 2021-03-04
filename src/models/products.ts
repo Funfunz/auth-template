@@ -29,7 +29,7 @@ export default {
         visible: {
           entityPage: true,
           detail: true,
-          relation: true
+          relation: false
         },
         label: 'Id',
         listColumn: {},
@@ -69,7 +69,7 @@ export default {
         visible: {
           entityPage: true,
           detail: true,
-          relation: true
+          relation: false
         },
         label: 'Color',
         listColumn: {},
@@ -89,7 +89,7 @@ export default {
         visible: {
           entityPage: true,
           detail: true,
-          relation: true
+          relation: false
         },
         label: 'UserId',
         listColumn: {},
