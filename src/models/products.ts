@@ -93,9 +93,6 @@ export default {
         },
         label: 'UserId',
         listColumn: {},
-        editField: {
-          type: 'number'
-        }
       }
     }
   ],
