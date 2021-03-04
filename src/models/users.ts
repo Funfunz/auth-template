@@ -54,7 +54,7 @@ export default {
         visible: {
           entityPage: true,
           detail: true,
-          relation: true
+          relation: false
         },
         label: 'Id',
         listColumn: {},
@@ -94,7 +94,7 @@ export default {
         visible: {
           entityPage: true,
           detail: true,
-          relation: false
+          relation: true
         },
         label: 'Name',
         listColumn: {},
