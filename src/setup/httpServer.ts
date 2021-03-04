@@ -1,22 +1,15 @@
 import http from 'http'
 import logger from '@root/setup/logger'
-import expressApp from '@root/setup/express'
+import { express } from '@root/index'
+import { normalizePort } from '@root/utils/normalizePort'
+import type { Express } from 'express'
 
 const log = logger('setup/http')
-
-const { PORT = 3001 } = process.env
-expressApp.set('port', Number(PORT))
-
-const httpServer = http.createServer(expressApp)
-httpServer.listen(Number(PORT))
-export default httpServer
-log('server created')
 
 function onError(error: any) {
   if (error.syscall !== 'listen') {
     throw error
   }
-
   switch (error.code) {
     case 'EACCES':
       log('Port requires elevated privileges')
@@ -31,13 +24,23 @@ function onError(error: any) {
   }
 }
 
-function onListening() {
-  const addr = httpServer.address()
-  const bind = typeof addr === 'string'
-    ? `pipe ${addr}`
-    : `port ${addr?.port}`
-  log(`listening on ${bind}`)
+function onListening(httpServer: http.Server) {
+  return () => {
+    const addr = httpServer.address()
+    const bind = typeof addr === 'string'
+      ? `pipe ${addr}`
+      : `port ${addr?.port}`
+    log(`listening on ${bind}`)
+  }
 }
 
-httpServer.on('error', onError)
-httpServer.on('listening', onListening)
+export function generateServer() {
+  const httpServer = http.createServer(express)
+  
+  httpServer.on('error', onError)
+  httpServer.on('listening', onListening(httpServer))
+
+  httpServer.listen(normalizePort())
+  log('server created')
+
+}
