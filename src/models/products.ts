@@ -31,6 +31,9 @@ export default {
           detail: true,
           relation: false
         },
+        entityPage: {
+          searchable: true,
+        },
         label: 'Id',
         listColumn: {},
         editField: {
@@ -50,6 +53,9 @@ export default {
           entityPage: true,
           detail: true,
           relation: true
+        },
+        entityPage: {
+          searchable: true,
         },
         label: 'Name',
         listColumn: {},
@@ -73,6 +79,26 @@ export default {
         },
         label: 'Color',
         listColumn: {},
+        entityPage: {
+          filterable: {
+            type: 'string',
+            inputType: 'select',
+            content: [
+              {
+                label: 'Blue',
+                value: 'Blue',
+              },
+              {
+                label: 'Red',
+                value: 'Red',
+              },
+              {
+                label: 'Yellow',
+                value: 'Yellow',
+              }
+            ]
+          },
+        },
         editField: {
           type: 'text'
         }
