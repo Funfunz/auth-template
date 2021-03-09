@@ -122,7 +122,7 @@ export default {
           detail: true,
           relation: false
         },
-        label: 'UserId',
+        label: 'User',
         listColumn: {},
         editField: {}
       }
