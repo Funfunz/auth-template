@@ -21,7 +21,7 @@ export default {
       name: 'id',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: false,
         isPk: true
       },
@@ -108,7 +108,7 @@ export default {
       name: 'userId',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: true
       },
       layout: {
