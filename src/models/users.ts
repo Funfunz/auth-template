@@ -124,7 +124,7 @@ export default {
         label: 'Password',
         listColumn: {},
         editField: {
-          type: 'text'
+          type: 'password'
         }
       }
     },
