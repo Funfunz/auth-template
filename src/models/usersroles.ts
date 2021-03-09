@@ -42,7 +42,7 @@ export default {
       name: 'roleId',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: false,
         isPk: true
       },
