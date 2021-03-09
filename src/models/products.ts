@@ -45,7 +45,7 @@ export default {
       name: 'name',
       searchable: true,
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: true
       },
       layout: {
@@ -68,7 +68,7 @@ export default {
       name: 'color',
       searchable: true,
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: true
       },
       layout: {

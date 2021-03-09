@@ -21,7 +21,7 @@ export default {
       name: 'userId',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: false,
         isPk: true
       },

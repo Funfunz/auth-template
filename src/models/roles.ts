@@ -30,7 +30,7 @@ export default {
       name: 'id',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: false,
         isPk: true
       },
@@ -51,7 +51,7 @@ export default {
       name: 'name',
       searchable: true,
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: false
       },
       layout: {

@@ -46,7 +46,7 @@ export default {
       name: 'id',
       searchable: true,
       model: {
-        type: 'int',
+        type: 'number',
         allowNull: false,
         isPk: true
       },
@@ -67,7 +67,7 @@ export default {
       name: 'email',
       searchable: true,
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: false
       },
       layout: {
@@ -87,7 +87,7 @@ export default {
       name: 'name',
       searchable: true,
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: true
       },
       layout: {
@@ -112,7 +112,7 @@ export default {
         relation: false
       },
       model: {
-        type: 'varchar(255)',
+        type: 'string',
         allowNull: true
       },
       layout: {
