@@ -5,22 +5,23 @@ import sha512 from "@root/utils/sha512"
 
 const log = logger('hooks/user')
 
-export function hook_addAndUpdateUser(options: IHookProps<null>) {
+export function hook_addAndUpdateUser(options: IHookProps<null, unknown>) {
   if ((options.args.data as any)?.password) {
     (options.args.data as any).password = sha512((options.args.data as any).password)
   }
   return options
 }
 
-export function hook_queryUser(options: IHookProps<null>) {
-  if (options.superUser) {
-    return options
+function normalizeUser(user: Partial<IUser> = {}) {
+  return {
+    ...user,
+    password: undefined,
   }
-  options.results = (options.results as IUser[]).map((item) => {
-    return {
-      ...item,
-      password: undefined,
-    }
-  })
+}
+
+export function hook_queryUser(options: IHookProps<null, unknown>) {
+  options.results = Array.isArray(options.results)
+    ? options.results.map(normalizeUser)
+    : normalizeUser(options.results as IUser)
   return options
 }

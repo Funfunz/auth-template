@@ -1,5 +1,6 @@
 import { IUser } from '@root/models/users'
 import { funfunz } from '@root/index'
+import { Funfunz } from '@funfunz/core'
 import logger from '@root/setup/logger'
 
 const log = logger('controllers/user')
@@ -8,14 +9,14 @@ export async function updateById(id: string | number, data: Partial<IUser>) {
   const graphqlData = Object.keys(data).map((key) => {
     return `${key}: "${(data as any)[key]}"`
   }).join(',')
-  await funfunz.executeGraphQL(`mutation {
+  await Funfunz.executeGraphQL(funfunz.schemaManager.getSchemas().local, `mutation {
     updateUsers(filter: { id: { _eq: ${id} }}, data: {${graphqlData}})
   }`)
 }
 
 export async function getByEmail(email: string) {
   log(`getByEmail: ${email}`)
-  const result = await funfunz.executeGraphQL(`{
+  const result = await Funfunz.executeGraphQL(funfunz.schemaManager.getSchemas().local, `{
     users(filter: { email: { _eq: "${email}" }}) {
       id
       name
@@ -34,7 +35,7 @@ export async function getByEmail(email: string) {
 
 export async function getById(id: string | number) {
   log(`getById: ${id}`)
-  const result = await funfunz.executeGraphQL(`{
+  const result = await Funfunz.executeGraphQL(funfunz.schemaManager.getSchemas().local, `{
     users(filter: { id: { _eq: ${id} }}) {
       id
       name
