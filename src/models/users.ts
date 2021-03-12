@@ -11,118 +11,38 @@ export default {
   name: 'users',
   connector: 'mainDatabase',
   visible: true,
-  roles: {
-    create: [
-      'all'
-    ],
-    read: [
-      'all'
-    ],
-    update: [
-      'all'
-    ],
-    delete: [
-      'all'
-    ]
-  },
   relations: [
     {
       type: 'm:n',
-      relationalTable: 'usersroles',
+      relationalEntity: 'usersroles',
       foreignKey: 'userId',
-      remoteTable: 'roles',
+      remoteEntity: 'roles',
       remoteForeignKey: 'roleId',
     },
     {
       type: '1:n',
-      relationalTable: 'products',
-      foreignKey: 'id',
-      remoteForeignKey: 'userId',
-      remoteTable: 'products',
+      foreignKey: 'userId',
+      remoteEntity: 'products',
     }
   ],
   properties: [
     {
       name: 'id',
-      searchable: true,
-      model: {
-        type: 'number',
-        allowNull: false,
-        isPk: true
-      },
-      layout: {
-        visible: {
-          entityPage: true,
-          detail: true,
-          relation: false
-        },
-        label: 'Id',
-        listColumn: {},
-        editField: {
-          type: 'number'
-        }
-      }
+      type: 'number',
+      isPk: true,
     },
     {
       name: 'email',
-      searchable: true,
-      model: {
-        type: 'string',
-        allowNull: false
-      },
-      layout: {
-        visible: {
-          entityPage: true,
-          detail: true,
-          relation: false
-        },
-        label: 'Email',
-        listColumn: {},
-        editField: {
-          type: 'text'
-        }
-      }
+      type: 'string',
     },
     {
       name: 'name',
-      searchable: true,
-      model: {
-        type: 'string',
-        allowNull: true
-      },
-      layout: {
-        visible: {
-          entityPage: true,
-          detail: true,
-          relation: true
-        },
-        label: 'Name',
-        listColumn: {},
-        editField: {
-          type: 'text'
-        }
-      }
+      type: 'string',
     },
     {
       name: 'password',
-      searchable: true,
-      visible: {
-        list: true,
-        detail: true,
-        relation: false
-      },
-      model: {
-        type: 'string',
-        allowNull: true
-      },
-      layout: {
-        visible: {
-          entityPage: false,
-          detail: true,
-          relation: false
-        },
-        label: 'Password',
-        listColumn: {},
+      type: 'string',
+      backoffice: {
         editField: {
           type: 'password'
         }
@@ -142,13 +62,5 @@ export default {
   },
   layout: {
     label: 'Users',
-    listPage: {},
-    searchField: {},
-    createButton: {},
-    editButton: {},
-    deleteButton: {},
-    editPage: {
-      sections: []
-    }
   }
 }

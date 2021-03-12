@@ -12,15 +12,16 @@ export function hook_addAndUpdateUser(options: IHookProps<null, unknown>) {
   return options
 }
 
+function normalizeUser(user: Partial<IUser> = {}) {
+  return {
+    ...user,
+    password: undefined,
+  }
+}
+
 export function hook_queryUser(options: IHookProps<null, unknown>) {
-  /*if (options.superUser) {
-    return options
-  }*/
-  options.results = (options.results as IUser[]).map((item) => {
-    return {
-      ...item,
-      password: undefined,
-    }
-  })
+  options.results = Array.isArray(options.results)
+    ? options.results.map(normalizeUser)
+    : normalizeUser(options.results as IUser)
   return options
 }
