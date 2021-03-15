@@ -60,7 +60,7 @@ export default {
       beforeResolver: hook_addAndUpdateUser,
     }
   },
-  layout: {
+  backoffice: {
     label: 'Users',
   }
 }
