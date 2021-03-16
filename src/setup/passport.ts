@@ -1,7 +1,8 @@
 import passport from 'passport'
 import { IProfile, OIDCStrategy, VerifyCallback } from 'passport-azure-ad'
-import { IUser } from '@root/models/users'
+import type { IUser } from '@root/models/users'
 import * as userController from '@root/controllers/user'
+import { Request } from 'express'
 
 export function generatePassport() {
   
@@ -24,10 +25,10 @@ export function generatePassport() {
     responseType: 'code', 
     responseMode: 'form_post', 
     identityMetadata: '',
-    passReqToCallback: false,
+    passReqToCallback: true,
     redirectUrl: process.env.OAUTH_REDIRECT_URL as string,
   },
-  (profile: IProfile, done: VerifyCallback) => {
+  (req: Request, profile: IProfile, done: VerifyCallback) => {
     const userId = profile.oid
     if (!userId) {
       return done(new Error("No oid found"), null)

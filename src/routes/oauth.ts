@@ -8,7 +8,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL as string
 router.get('/login',
   (req, res, next) => {
     passport.authenticate('azuread-openidconnect', { 
-      failureRedirect: req.url
+      failureRedirect: req.url.split('?')[0]
     })(req, res, next)
   },
   (req, res) => {
@@ -19,7 +19,7 @@ router.get('/login',
 router.post('/callback',
   (req, res, next) => {
     passport.authenticate('azuread-openidconnect', { 
-      failureRedirect: req.url.replace('/callback', '/login') 
+      failureRedirect: req.url.split('/callback')[0] + '/login'
     })(req, res, next)
   },
   (req, res, next) => {
@@ -33,7 +33,7 @@ router.post('/callback',
     })
   },
   (req, res) => { 
-    res.redirect(`${FRONTEND_URL}?loginError`)
+    res.redirect(FRONTEND_URL)
   }
 )
  
