@@ -36,6 +36,13 @@ function generateConfig() {
             config: {
               folderPath: path.join(__dirname, '..', '..', 'storage') 
             },
+          },
+          azureBlobStorage: {
+            type: "@funfunz/azure-blob-storage-connector",
+            config: {
+              connectionString: process.env.CONNECTION_STRING,
+              containerName: process.env.CONTAINER_NAME
+            },
           }
         }
       }
@@ -48,6 +55,7 @@ log(config)
 export function generateFunfunz() {
   log('building funfunz')
   const funfunz = new Funfunz({
+    // @ts-ignore
     config,
     // @ts-ignore
     settings: models,

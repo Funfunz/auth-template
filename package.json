@@ -39,7 +39,8 @@
     "typescript": "^4.1.3"
   },
   "dependencies": {
-    "@funfunz/core": "^0.15.0",
+    "@funfunz/azure-blob-storage-connector": "^0.3.3",
+    "@funfunz/core": "^0.16.0",
     "@funfunz/json-data-connector": "^1.1.0",
     "@funfunz/sql-data-connector": "^0.8.0",
     "body-parser": "^1.19.0",
