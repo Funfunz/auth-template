@@ -1,4 +1,4 @@
-import { permissionsHook } from "@root/hooks/permissions"
+import { checkPermissions } from "@root/hooks/permissions"
 
 export default {
   name: 'products',
@@ -55,7 +55,7 @@ export default {
   ],
   hooks: {
     all: {
-      beforeResolver: permissionsHook
+      beforeResolver: checkPermissions
     }
   }
 }
