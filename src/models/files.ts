@@ -1,17 +1,15 @@
 import { model } from '@funfunz/azure-blob-storage-connector'
+import { IEntityInfo, IProperty } from '@funfunz/core/lib/generator/configurationTypes'
 
-const filesModel = model({
+const filesModel: IEntityInfo = model({
   name: 'files',
   visible: true,
   connector: 'azureBlobStorage'
-})
+});
 
-const contentProperty = filesModel.properties.find(p => p.name === 'content')
-if (contentProperty) {
-  contentProperty.backoffice = {
-    visible: {
-      entityPage: false
-    }
+(filesModel.properties.find(p=>p.name==='content') as IProperty).backoffice = {
+  visible: {
+    entityPage: false
   }
 }
 
