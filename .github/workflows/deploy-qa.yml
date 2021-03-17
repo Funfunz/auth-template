@@ -24,6 +24,7 @@ jobs:
           delay: 10
         env:
           HD_NPM_CONFIG_PRODUCTION: false
+          HD_NODE_ENV: qa
           HD_DB_HOST: ${{env.DB_HOST}}
           HD_DB_USER: ${{env.DB_USER}}
           HD_DB_PASS: ${{env.DB_PASS}}
