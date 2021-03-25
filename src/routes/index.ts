@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import logger from '@root/setup/logger'
 import { funfunz } from '@root/index'
+import wwwRouter from '@root/routes/www'
 
 const log = logger('routes')
 
@@ -14,6 +15,7 @@ export function generateRouter(): Router {
     res.end()
   })
   router.use('/graphql', funfunz.middleware)
+  router.use(wwwRouter)
 
   log('end')
   return router

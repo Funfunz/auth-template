@@ -27,7 +27,7 @@ export default {
       const user = await userController.getByEmail(email)
       const hash = sha512(user.password)
       const params = {
-        resetLink: `${process.env.SERVER_PUBLIC_URL}/#/resetPassword?hash=${hash}`
+        resetLink: `${process.env.PUBLIC_URL}/#/resetPassword?hash=${hash}`
       }
       log('sending reset password email')
       await mailService.sendWithTemplate('resetPassword', email, params)
