@@ -4,6 +4,7 @@
   "description": "Authentication demo project using Funfunz",
   "main": "build/index.js",
   "scripts": {
+        "merge-github": "(git remote add github https://github.com/Funfunz/auth-template.git | true) && git fetch github master:github && git merge github",
     "forever:start": "forever start -o out.log -e error.log build/index.js",
     "forever:stop": "forever stop build/index.js",
     "build": "tsc",
