@@ -13,7 +13,7 @@ const log = logger('setup/express')
 
 export function generateExpress (): Express {
   log('start')
-  const { SERVER_SESSION_SECRET = 'keyboard cat' } = process.env
+  const { SESSION_SECRET = 'keyboard cat' } = process.env
 
   const application = express()
   application.set('port', normalizePort())
@@ -26,7 +26,7 @@ export function generateExpress (): Express {
       credentials: true,
     }),
     cookieSession({
-      secret: SERVER_SESSION_SECRET,
+      secret: SESSION_SECRET,
     }),
     bodyParser.json(),
     passport.initialize(),

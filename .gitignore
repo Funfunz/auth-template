@@ -1,3 +1,9 @@
 node_modules/
 build/
 .env
+.env*
+!.env.example
+error.log
+out.log
+
+htpasswd

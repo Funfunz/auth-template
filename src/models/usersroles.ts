@@ -1,3 +1,5 @@
+import { checkPermissions } from '@root/hooks/permissions'
+
 export default {
   name: 'usersroles',
   connector: 'mainDatabase',
@@ -27,5 +29,10 @@ export default {
       foreignKey: 'roleId',
       remoteEntity: 'roles'
     }
-  ]
+  ],
+  hooks: {
+    all: {
+      beforeResolver: checkPermissions
+    }
+  }
 }

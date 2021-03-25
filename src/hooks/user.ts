@@ -5,7 +5,7 @@ import sha512 from "@root/utils/sha512"
 
 const log = logger('hooks/user')
 
-export function hook_addAndUpdateUser(options: IHookProps<null, unknown>) {
+export function hook_addAndUpdateUser(options: IHookProps<unknown, unknown>) {
   if ((options.args.data as any)?.password) {
     (options.args.data as any).password = sha512((options.args.data as any).password)
   }
@@ -19,7 +19,11 @@ function normalizeUser(user: Partial<IUser> = {}) {
   }
 }
 
-export function hook_queryUser(options: IHookProps<null, unknown>) {
+export function hook_queryUser(options: IHookProps<unknown, unknown>) {
+  if (options.schemaOptions.isLocal) {
+    // ignore if current execution is from local schema
+    return options
+  }
   options.results = Array.isArray(options.results)
     ? options.results.map(normalizeUser)
     : normalizeUser(options.results as IUser)

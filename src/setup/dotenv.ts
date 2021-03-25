@@ -14,18 +14,16 @@ function logEnv() {
   const {
     DEBUG,
     NAMESPACE,
-    SERVER_PORT,
-    SERVER_PUBLIC_URL,
-    SERVER_SESSION_SECRET,
+    PUBLIC_URL,
+    SESSION_SECRET,
     PORT
   } = process.env
 
   log({
     DEBUG,
     NAMESPACE,
-    SERVER_PORT,
-    SERVER_PUBLIC_URL,
-    SERVER_SESSION_SECRET,
+    PUBLIC_URL,
+    SESSION_SECRET,
     PORT
   })
 
