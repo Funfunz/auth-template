@@ -7,6 +7,7 @@ import sha512 from '@root/utils/sha512'
 export interface IArgs {
   email: string
   password: string
+  [key: string]: any
 }
 
 const log = logger('graphql/mutations/login')
