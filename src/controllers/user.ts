@@ -49,3 +49,24 @@ export async function getById(id: string | number) {
     return result.data.users[0]
   }
 }
+
+
+export async function createUser(user: IUser) {
+  const result = await Funfunz.executeGraphQL(funfunz.schemaManager.getSchemas().local, `mutation {
+    addUsers({
+      id: ${user.id},
+      name: ${user.name},
+      email: ${user.email},
+    }) {
+      id,
+      name,
+      email,
+    }
+  }`)
+  if (result.errors) {
+    throw result.errors
+  }
+  if (result.data && result.data.addUsers && result.data.addUsers.length === 1) {
+    return result.data.addUsers[0]
+  }
+}

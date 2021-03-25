@@ -3,10 +3,10 @@ import { checkPermissions } from "@root/hooks/permissions"
 import { hook_addAndUpdateUser, hook_queryUser } from "@root/hooks/user"
 
 export interface IUser {
-  id: number
+  id?: number | string
   name: string
-  username: string
-  password: string
+  email: string
+  password?: string
 }
 
 export default {
