@@ -1,4 +1,4 @@
-import { GraphQLBoolean, GraphQLFieldConfig, GraphQLID, GraphQLInt, GraphQLString } from 'graphql'
+import { GraphQLBoolean, GraphQLFieldConfig, GraphQLInt, GraphQLString } from 'graphql'
 import * as userController from '@root/controllers/user'
 import logger from '@root/setup/logger'
 import { IContext } from '@root/graphql/types'

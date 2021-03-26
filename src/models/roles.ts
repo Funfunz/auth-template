@@ -1,7 +1,9 @@
+import { checkPermissions } from "@root/hooks/permissions"
+
 export default {
   name: 'roles',
   connector: 'mainDatabase',
-  visible: false,
+  visible: true,
   relations: [
     {
       type: 'm:n',
@@ -22,4 +24,9 @@ export default {
       type: 'string',
     },
   ],
+  hooks: {
+    all: {
+      beforeResolver: checkPermissions
+    }
+  }
 }
