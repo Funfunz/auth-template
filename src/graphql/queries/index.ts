@@ -1,4 +1,4 @@
-import { GraphQLFieldConfigMap } from 'graphql'
+import { GraphQLFieldConfigMap } from '@funfunz/core'
 
 import me from './me'
 

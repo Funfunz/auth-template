@@ -1,4 +1,4 @@
-import { GraphQLFieldConfig, GraphQLInt, GraphQLObjectType, GraphQLString } from 'graphql'
+import { GraphQLFieldConfig, GraphQLInt, GraphQLObjectType, GraphQLString } from '@funfunz/core'
 import logger from '@root/setup/logger'
 import { IContext } from '@root/graphql/types'
 
