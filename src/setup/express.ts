@@ -22,7 +22,7 @@ export function generateExpress (): Express {
   application.use([
     morgan('dev') as express.Handler,
     cors({
-      origin: process.env.CORS_WHITELIST?.split(',') || '*',
+      origin: process.env.CORS_WHITELIST || '*',
       credentials: true,
     }),
     cookieSession({
