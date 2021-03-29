@@ -14,9 +14,18 @@ import { generateFunfunz } from '@root/setup/funfunz'
 import { generatePassport } from '@root/setup/passport'
 // setup express
 import { generateExpress } from '@root/setup/express'
+import { Funfunz } from '@funfunz/core'
+import type { Express } from 'express'
 
 
 export const passport = generatePassport()
-export const funfunz = generateFunfunz()
-export const express = generateExpress()
-export const server = generateServer()
+export let funfunz: Funfunz
+export let express: Express
+
+generateFunfunz().then(
+  (funfunzInstance) => {
+    funfunz = funfunzInstance
+    express = generateExpress()
+    generateServer()
+  }
+)
