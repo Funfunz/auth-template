@@ -1,9 +1,9 @@
-import { GraphQLBoolean, GraphQLFieldConfig, GraphQLString } from '@funfunz/core'
-import * as userController from '@root/controllers/user'
-import logger from '@root/setup/logger'
-import { IContext } from '@root/graphql/types'
-import * as mailService from '@root/services/mail'
-import sha512 from '@root/utils/sha512'
+import { GraphQLBoolean, GraphQLFieldConfig, GraphQLString } from '@funfunz/core/lib/index.js'
+import * as userController from '../../controllers/user.js'
+import logger from '../../setup/logger.js'
+import { IContext } from '../types.js'
+import * as mailService from '../../services/mail/index.js'
+import sha512 from '../../utils/sha512.js'
 
 export interface IArgs {
   email: string

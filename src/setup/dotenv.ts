@@ -5,7 +5,7 @@ dotenv.config()
 process.env.PORT = process.env.PORT || '3001'
 
 function logEnv() {
-  const logger = require('@root/setup/logger')
+  const logger = require('./logger.js')
 
   const log = logger.default('setup/dotenv')
   log('start')

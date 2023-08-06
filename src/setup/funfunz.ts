@@ -1,9 +1,9 @@
 import path from 'path'
-import { Funfunz } from '@funfunz/core'
-import logger from '@root/setup/logger'
-import models from '@root/models'
-import mutations from '@root/graphql/mutations'
-import queries from '@root/graphql/queries'
+import { Funfunz } from '@funfunz/core/lib/index.js'
+import logger from './logger.js'
+import models from '../models/index.js'
+import mutations from '../graphql/mutations/index.js'
+import queries from '../graphql/queries/index.js'
 import { Connector as blobStorageConnector } from '@funfunz/azure-blob-storage-connector'
 const log = logger('setup/funfunz')
 log('start')

@@ -1,4 +1,4 @@
-import { GraphQLBoolean, GraphQLFieldConfig, GraphQLInt, GraphQLString } from '@funfunz/core'
+import { GraphQLBoolean, GraphQLFieldConfig, GraphQLInt, GraphQLString } from '@funfunz/core/lib/index.js'
 import * as userController from '@root/controllers/user'
 import logger from '@root/setup/logger'
 import { IContext } from '@root/graphql/types'

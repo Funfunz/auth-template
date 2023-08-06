@@ -1,7 +1,7 @@
-import login from './login'
-import logout from './logout'
-import requestResetPassword from './requestResetPassword'
-import resetPassword from './resetPassword'
+import login from './login.js'
+import logout from './logout.js'
+import requestResetPassword from './requestResetPassword.js'
+import resetPassword from './resetPassword.js'
 
 export default {
   login,

@@ -1,6 +1,6 @@
 import { IUser } from '@root/models/users'
 import { funfunz } from '@root/index'
-import { Funfunz } from '@funfunz/core'
+import { Funfunz } from '@funfunz/core/lib/index.js'
 import logger from '@root/setup/logger'
 
 const log = logger('controllers/user')

@@ -4,17 +4,17 @@ addAliases({
   '@root': __dirname
 })
 // setup dotenv
-import '@root/setup/dotenv'
+import './setup/dotenv'
 
 // setup http server
-import { generateServer } from '@root/setup/httpServer'
+import { generateServer } from './setup/httpServer.js'
 // setup funfunz
-import { generateFunfunz } from '@root/setup/funfunz'
+import { generateFunfunz } from './setup/funfunz.js'
 // setup passport
-import { generatePassport } from '@root/setup/passport'
+import { generatePassport } from './setup/passport.js'
 // setup express
-import { generateExpress } from '@root/setup/express'
-import { Funfunz } from '@funfunz/core'
+import { generateExpress } from './setup/express.js'
+import { Funfunz } from '@funfunz/core/lib/index.js'
 import type { Express } from 'express'
 
 
