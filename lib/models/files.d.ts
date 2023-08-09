@@ -1,3 +1,2 @@
-import { IEntityInfo } from '@funfunz/core/lib/generator/configurationTypes';
-declare const filesModel: IEntityInfo;
+declare const filesModel: any;
 export default filesModel;

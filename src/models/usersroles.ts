@@ -1,4 +1,4 @@
-import { checkPermissions } from '@root/hooks/permissions'
+import { checkPermissions } from '../hooks/permissions.js'
 
 export default {
   name: 'usersroles',

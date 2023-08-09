@@ -16,7 +16,11 @@ router.get('/login/callback',
 )
 
 router.get('/logout', (req, res) => {
-  req.logout()
+  req.logout({keepSessionInfo: false}, (error) => {
+    if (error) {
+      console.log(error)
+    }
+  })
   res.redirect(FRONTEND_URL)
 })
 

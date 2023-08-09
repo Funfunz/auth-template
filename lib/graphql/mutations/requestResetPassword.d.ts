@@ -1,4 +1,5 @@
 import { GraphQLFieldConfig } from '@funfunz/core/lib/index.js';
+import { IContext } from '../types.js';
 export interface IArgs {
     email: string;
 }

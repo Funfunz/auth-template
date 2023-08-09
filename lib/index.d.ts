@@ -1,5 +1,5 @@
 /// <reference types="passport" />
-import './setup/dotenv';
+import './setup/dotenv.js';
 import { Funfunz } from '@funfunz/core/lib/index.js';
 import type { Express } from 'express';
 export declare const passport: import("passport").PassportStatic;

@@ -9,8 +9,8 @@
     "forever:start": "forever start -o out.log -e error.log build/index.js",
     "forever:stop": "forever stop build/index.js",
     "build": "tsc",
-    "start": "node build/",
-    "dev": "ts-node-esm src/index.ts",
+    "start": "node lib/",
+    "dev": "node --loader ts-node/esm ./src/index.ts",
     "dev:sql": "FUNFUNZ_CONNECTOR=sql npm run dev"
   },
   "repository": {

@@ -5,8 +5,12 @@ import models from '../models/index.js'
 import mutations from '../graphql/mutations/index.js'
 import queries from '../graphql/queries/index.js'
 import { Connector as blobStorageConnector } from '@funfunz/azure-blob-storage-connector'
+import { fileURLToPath } from 'url'
 const log = logger('setup/funfunz')
 log('start')
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export async function generateFunfunz() {
   log('building funfunz')

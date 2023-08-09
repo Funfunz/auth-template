@@ -1,8 +1,8 @@
 import { GraphQLBoolean, GraphQLFieldConfig, GraphQLInt, GraphQLString } from '@funfunz/core/lib/index.js'
-import * as userController from '@root/controllers/user'
-import logger from '@root/setup/logger'
-import { IContext } from '@root/graphql/types'
-import sha512 from '@root/utils/sha512'
+import * as userController from '../../controllers/user.js'
+import logger from '../../setup/logger.js'
+import { IContext } from '../types.js'
+import sha512 from '../../utils/sha512.js'
 
 export interface IArgs {
   id: number

@@ -1,3 +1,6 @@
+import { IHookProps } from "@funfunz/core/lib/index.js";
+import { checkPermissions } from "../hooks/permissions.js";
+import { hook_queryUser } from "../hooks/user.js";
 export interface IUser {
     id?: number | string;
     name: string;
@@ -43,17 +46,17 @@ declare const _default: {
     })[];
     hooks: {
         query: {
-            beforeResolver: any;
-            afterQueryResult: any;
+            beforeResolver: typeof checkPermissions;
+            afterQueryResult: typeof hook_queryUser;
         };
         update: {
-            beforeResolver: (args: IHookProps<unknown, unknown>) => any;
+            beforeResolver: (args: IHookProps<unknown, unknown>) => IHookProps<unknown, unknown>;
         };
         add: {
-            beforeResolver: (args: IHookProps<unknown, unknown>) => any;
+            beforeResolver: (args: IHookProps<unknown, unknown>) => IHookProps<unknown, unknown>;
         };
         delete: {
-            beforeResolver: any;
+            beforeResolver: typeof checkPermissions;
         };
     };
     backoffice: {

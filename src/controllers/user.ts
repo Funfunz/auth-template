@@ -1,7 +1,7 @@
-import { IUser } from '@root/models/users'
-import { funfunz } from '@root/index'
+import { IUser } from '../models/users.js'
+import { funfunz } from '../index.js'
 import { Funfunz } from '@funfunz/core/lib/index.js'
-import logger from '@root/setup/logger'
+import logger from '../setup/logger.js'
 
 const log = logger('controllers/user')
 
@@ -27,7 +27,7 @@ export async function getByEmail(email: string) {
   if (result.errors) {
     throw result.errors
   }
-  if (result.data && result.data.users && result.data.users.length === 1) {
+  if (result.data && result.data.users && Array.isArray(result.data.users) && result.data.users.length === 1) {
     return result.data.users[0]
   }
 }
@@ -45,7 +45,7 @@ export async function getById(id: string | number) {
   if (result.errors) {
     throw result.errors
   }
-  if (result.data && result.data.users && result.data.users.length === 1) {
+  if (result.data && result.data.users && Array.isArray(result.data.users) && result.data.users.length === 1) {
     return result.data.users[0]
   }
 }
@@ -66,7 +66,7 @@ export async function createUser(user: IUser) {
   if (result.errors) {
     throw result.errors
   }
-  if (result.data && result.data.addUsers && result.data.addUsers.length === 1) {
+  if (result.data && result.data.addUsers && Array.isArray(result.data.addUsers) && result.data.addUsers.length === 1) {
     return result.data.addUsers[0]
   }
 }

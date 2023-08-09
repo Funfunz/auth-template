@@ -1,3 +1,4 @@
+import { checkPermissions } from '../hooks/permissions.js';
 declare const _default: {
     name: string;
     connector: string;
@@ -15,7 +16,7 @@ declare const _default: {
     }[];
     hooks: {
         all: {
-            beforeResolver: any;
+            beforeResolver: typeof checkPermissions;
         };
     };
 };

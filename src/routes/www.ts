@@ -3,7 +3,7 @@ import fs from 'fs'
 import express, { Router } from 'express'
 import favicon from 'serve-favicon'
 
-import logger from '@root/setup/logger'
+import logger from '../setup/logger.js'
 
 const log = logger('routes/www')
 log('start');
