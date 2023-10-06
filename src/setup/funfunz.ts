@@ -1,12 +1,16 @@
 import path from 'path'
-import { Funfunz } from '@funfunz/core'
-import logger from '@root/setup/logger'
-import models from '@root/models'
-import mutations from '@root/graphql/mutations'
-import queries from '@root/graphql/queries'
+import { Funfunz } from '@funfunz/core/lib/index.js'
+import logger from './logger.js'
+import models from '../models/index.js'
+import mutations from '../graphql/mutations/index.js'
+import queries from '../graphql/queries/index.js'
 import { Connector as blobStorageConnector } from '@funfunz/azure-blob-storage-connector'
+import { fileURLToPath } from 'url'
 const log = logger('setup/funfunz')
 log('start')
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export async function generateFunfunz() {
   log('building funfunz')

@@ -1,4 +1,4 @@
-import { IHookProps } from "@funfunz/core"
+import { IHookProps } from "@funfunz/core/lib/index.js"
 import { Request } from "express"
 
 export function checkPermissions(options: IHookProps<unknown, unknown>) {

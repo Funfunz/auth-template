@@ -1,6 +1,6 @@
-import { GraphQLFieldConfig, GraphQLInt, GraphQLObjectType, GraphQLString } from '@funfunz/core'
-import logger from '@root/setup/logger'
-import { IContext } from '@root/graphql/types'
+import { GraphQLFieldConfig, GraphQLInt, GraphQLObjectType, GraphQLString } from '@funfunz/core/lib/index.js'
+import logger from '../../setup/logger.js'
+import { IContext } from '../types.js'
 
 export interface IArgs {
 }

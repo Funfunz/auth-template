@@ -1,7 +1,7 @@
-import type { IHookProps } from "@funfunz/core"
-import type { IUser } from '@root/models/users'
-import logger from "@root/setup/logger"
-import sha512 from "@root/utils/sha512"
+import { IHookProps } from '@funfunz/core/lib/index.js'
+import type { IUser } from '../models/users.js'
+import logger from "../setup/logger.js"
+import sha512 from "../utils/sha512.js"
 
 const log = logger('hooks/user')
 
