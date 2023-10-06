@@ -35,6 +35,6 @@ if (PUBLIC_DIR) {
     })
   })
 }
-log('end');
+log('end')
 
-export default router;
+export default router
