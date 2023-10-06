@@ -1,7 +1,7 @@
 import http from 'http'
-import logger from '@root/setup/logger'
-import { express } from '@root/index'
-import { normalizePort } from '@root/utils/normalizePort'
+import logger from './logger.js'
+import { express } from '../index.js'
+import { normalizePort } from '../utils/normalizePort.js'
 
 const log = logger('setup/http')
 

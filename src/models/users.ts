@@ -1,6 +1,6 @@
-import { IHookProps } from "@funfunz/core"
-import { checkPermissions } from "@root/hooks/permissions"
-import { hook_addAndUpdateUser, hook_queryUser } from "@root/hooks/user"
+import { IHookProps } from "@funfunz/core/lib/index.js"
+import { checkPermissions } from "../hooks/permissions.js"
+import { hook_addAndUpdateUser, hook_queryUser } from "../hooks/user.js"
 
 export interface IUser {
   id?: number | string

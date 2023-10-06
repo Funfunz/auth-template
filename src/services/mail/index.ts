@@ -1,5 +1,5 @@
 import nodemailer, { Transporter, SendMailOptions } from 'nodemailer'
-import { renderHTML, renderSubject, renderText, TemplateName } from './render'
+import { renderHTML, renderSubject, renderText, TemplateName } from './render.js'
 
 const {
   EMAIL_HOST,

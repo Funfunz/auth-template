@@ -1,7 +1,7 @@
 import passport from 'passport'
 import OAuth2Strategy from 'passport-oauth2'
-import type { IUser } from '@root/models/users'
-import * as userController from '@root/controllers/user'
+import type { IUser } from '../models/users.js'
+import * as userController from '../controllers/user.js'
 
 export function generatePassport() {
   passport.serializeUser((user: unknown, done) => {

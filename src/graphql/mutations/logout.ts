@@ -1,6 +1,6 @@
-import { GraphQLBoolean, GraphQLFieldConfig } from '@funfunz/core'
-import { IContext } from '@root/graphql/types'
-import logger from '@root/setup/logger'
+import { GraphQLBoolean, GraphQLFieldConfig } from '@funfunz/core/lib/index.js'
+import { IContext } from '../types.js'
+import logger from '../../setup/logger.js'
 
 export interface IArgs {}
 

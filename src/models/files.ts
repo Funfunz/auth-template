@@ -1,7 +1,7 @@
-import { model } from '@funfunz/azure-blob-storage-connector'
-import { IEntityInfo, IProperty } from '@funfunz/core/lib/generator/configurationTypes'
+import { model } from '@funfunz/azure-blob-storage-connector/lib/index.js'
+import { IEntityInfo, IProperty } from '@funfunz/core/lib/index.js';
 
-const filesModel: IEntityInfo = model({
+const filesModel: any = model({
   name: 'files',
   visible: true,
   connector: 'azureBlobStorage'

@@ -3,11 +3,11 @@ import bodyParser from 'body-parser'
 import cookieSession from 'cookie-session'
 import morgan from 'morgan'
 import cors from 'cors'
-import { passport } from '@root/index'
-import logger from '@root/setup/logger'
-import { generateRouter } from '@root/routes/index'
+import { passport } from '../index.js'
+import logger from './logger.js'
+import { generateRouter } from '../routes/index.js'
 import type { Express } from 'express'
-import { normalizePort } from '@root/utils/normalizePort'
+import { normalizePort } from '../utils/normalizePort.js'
 
 const log = logger('setup/express')
 
