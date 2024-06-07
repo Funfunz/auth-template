@@ -50,8 +50,9 @@
   },
   "dependencies": {
     "@funfunz/azure-blob-storage-connector": "^0.3.3",
-    "@funfunz/core": "^0.24.0",
+    "@funfunz/core": "^0.25.0",
     "@funfunz/json-data-connector": "^1.2.0",
+    "@funfunz/sql-data-connector": "^0.12.1",
     "body-parser": "^1.19.0",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
