@@ -11,7 +11,9 @@
     "build": "tsc",
     "start": "node lib/",
     "dev": "node --loader ts-node/esm ./src/index.ts",
-    "dev:sql": "FUNFUNZ_CONNECTOR=sql npm run dev"
+    "dev:sql": "FUNFUNZ_CONNECTOR=sql npm run dev",
+    "docker-compose:up": "docker compose up -d",
+    "docker-compose:down": "docker compose down --remove-orphans"
   },
   "repository": {
     "type": "git",
