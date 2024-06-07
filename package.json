@@ -11,7 +11,9 @@
     "build": "tsc",
     "start": "node lib/",
     "dev": "node --loader ts-node/esm ./src/index.ts",
-    "dev:sql": "FUNFUNZ_CONNECTOR=sql npm run dev"
+    "dev:sql": "FUNFUNZ_CONNECTOR=sql npm run dev",
+    "docker-compose:up": "docker compose up -d",
+    "docker-compose:down": "docker compose down --remove-orphans"
   },
   "repository": {
     "type": "git",
@@ -48,8 +50,9 @@
   },
   "dependencies": {
     "@funfunz/azure-blob-storage-connector": "^0.3.3",
-    "@funfunz/core": "^0.24.0",
+    "@funfunz/core": "^0.25.0",
     "@funfunz/json-data-connector": "^1.2.0",
+    "@funfunz/sql-data-connector": "^0.12.1",
     "body-parser": "^1.19.0",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
