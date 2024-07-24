@@ -5,6 +5,8 @@ import models from '../models/index.js'
 import mutations from '../graphql/mutations/index.js'
 import queries from '../graphql/queries/index.js'
 import { Connector as blobStorageConnector } from '@funfunz/azure-blob-storage-connector'
+import { Connector as sqlDataConnector} from '@funfunz/sql-data-connector'
+import { Connector as jsonDataConnector} from '@funfunz/json-data-connector'
 import { fileURLToPath } from 'url'
 const log = logger('setup/funfunz')
 log('start')
@@ -14,13 +16,9 @@ const __dirname = path.dirname(__filename)
 
 export async function generateFunfunz() {
   log('building funfunz')
-  const module = await import(process.env.FUNFUNZ_CONNECTOR === 'sql'
-    ? '@funfunz/sql-data-connector'
-    : '@funfunz/json-data-connector'
-  )
   const connectors = {
-    mainDatabase: process.env.FUNFUNZ_CONNECTOR === 'sql' ? {
-      connector: module.Connector,
+    mainDatabase: {
+      connector: sqlDataConnector,
       config: {
         client: 'mysql2',
         host: process.env.DB_HOST || "127.0.0.1",
@@ -29,8 +27,9 @@ export async function generateFunfunz() {
         password: process.env.DB_PASS || 'password',
         port: "3306",
       },
-    } : {
-      connector: module.Connector,
+    },
+    jsonDatabase: {
+      connector: jsonDataConnector,
       config: {
         folderPath: path.join(__dirname, '..', '..', 'storage'),
       },

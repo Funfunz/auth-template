@@ -3,18 +3,15 @@ import rolesModel from './roles.js'
 import usersModel from './users.js'
 import usersrolesModel from './usersroles.js'
 import filesModel from './files.js'
+import productsFilesModel from './productsfiles.js'
 
-const models = process.env.FUNFUNZ_CONNECTOR === 'json' ? [
+const models = [
   productsModel,
   rolesModel,
   usersModel,
   usersrolesModel,
   filesModel,
-] : [
-  productsModel,
-  rolesModel,
-  usersModel,
-  usersrolesModel,
+  productsFilesModel,
 ]
 
 export default models

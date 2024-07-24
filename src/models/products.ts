@@ -1,8 +1,9 @@
+import { IEntityInfo } from "@funfunz/core/lib/index.js"
 import { checkPermissions } from "../hooks/permissions.js"
 
 export default {
   name: 'products',
-  connector: 'mainDatabase',
+  connector: 'jsonDatabase',
   visible: true,
   properties: [
     {
@@ -14,7 +15,7 @@ export default {
       }
     },
     {
-      name: 'name',
+      name: 'productName',
       type: 'string',
       backoffice: {
         label: 'Name'
@@ -41,7 +42,7 @@ export default {
       backoffice: {
         label: 'User'
       }
-    }
+    },
   ],
   backoffice: {
     label: 'Products',
@@ -51,11 +52,18 @@ export default {
       type: 'n:1',
       foreignKey: 'userId',
       remoteEntity: 'users',
-    }
+    },
+    {
+      type: 'm:n',
+      relationalEntity: 'productsfiles',
+      foreignKey: 'productId',
+      remoteEntity: 'files',
+      remoteForeignKey: 'name',
+    },
   ],
   hooks: {
     all: {
       beforeResolver: checkPermissions
     }
   }
-}
+} as IEntityInfo
